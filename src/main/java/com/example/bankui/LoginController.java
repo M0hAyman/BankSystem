@@ -9,14 +9,29 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class LoginController {
     public LoginController(){
 
     }
+
     static Account account1=new Account();
+
+    static Account account2=new Account();
+
     static User user1=new User("mohamed","male",account1,"ssssss","1234");
 
+    static User user2=new User("som3a","male",account2,"yyyyyy","5678");
+
+    static ArrayList<User> users= new ArrayList<>() {
+        {
+            add(user1);
+            add(user2);
+        }
+    };
+
+    static ArrayList<Item> items= new ArrayList<>();
     @FXML
     private Button loginbtn;
 

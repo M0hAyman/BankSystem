@@ -18,6 +18,13 @@ public class MainMenuController {
     @FXML
     private Button depositebtn;
 
+    @FXML
+    private Button buyItembtn;
+    @FXML
+    private Button withdrawbtn;
+    @FXML
+    private Button transfermoneybtn;
+
     Main m = new Main();
 
     public void userLogOut(ActionEvent event) throws IOException {
@@ -28,5 +35,16 @@ public class MainMenuController {
     }
     public void depositebtnfn(ActionEvent event) throws IOException {
         m.changeScene("deposit-view.fxml");
+    }
+    public void buyItembtnfn(ActionEvent event) throws IOException {
+        m.changeScene("buy-items-view.fxml");
+    }
+
+    public void withdrawbtnfn(ActionEvent event) throws IOException {
+        m.changeScene("withdraw-view.fxml");
+    }
+
+    public void transfermoneybtnfn(ActionEvent event) throws IOException {
+        m.changeScene("transfer-money-view.fxml");
     }
 }
