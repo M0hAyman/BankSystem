@@ -31,15 +31,15 @@ public class buyItemController {
         try {
             int i = Integer.parseInt(amount_input);
             if(LoginController.curruser.buy_item(i)== -1){
-                confirmlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+                confirmlbl.setText("Invalid input. Please enter a valid POSITIVE amount.");
             }else{
-                LoginController.curruser.buy_item(i);
+                //LoginController.curruser.buy_item(i);
                 confirmlbl.setText(LoginController.curruser.getName()+" Your New Balance is: " + LoginController.curracc.getBalance()+"and you bought "+item_name_txt.getText());
 
             }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
-            confirmlbl.setText("Invalid input. Please enter a valid integer amount.");
+            confirmlbl.setText("Invalid input. Please enter a valid amount.");
         }
     }
 

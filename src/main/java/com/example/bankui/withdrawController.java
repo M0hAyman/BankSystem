@@ -30,7 +30,7 @@ public class withdrawController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle arg1)
     {
-        currentbalancelbl.setText("Your current Balance is: "+LoginController.account1.getBalance());
+        currentbalancelbl.setText("Your current Balance is: "+LoginController.curracc.getBalance());
         //nameLabel.setText("$ "+LoginController.account1.getBalance());
 
         //static_label=nameLabel;
@@ -43,20 +43,20 @@ public class withdrawController implements Initializable {
         try {
             int i = Integer.parseInt(amount_input);
             if(LoginController.curracc.withdraw(i) == -1){
-                confirmwithdrawlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+                confirmwithdrawlbl.setText("Invalid input. Please enter a valid POSITIVE amount.");
 
             } else {
-                LoginController.curracc.withdraw(i);
+                //LoginController.curracc.withdraw(i);
                 confirmwithdrawlbl.setText(LoginController.curruser.getName()+" Your New Balance is: " + LoginController.curracc.getBalance());
 
             }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
-            confirmwithdrawlbl.setText("Invalid input. Please enter a valid integer amount.");
+            confirmwithdrawlbl.setText("Invalid input. Please enter a valid amount.");
         }
     }
     public void checkmyBalancebtnfn(ActionEvent event) {
-        currentbalancelbl.setText("Your current Balance is: "+LoginController.account1.getBalance());
+        currentbalancelbl.setText("Your current Balance is: "+LoginController.curracc.getBalance());
 
     }
 

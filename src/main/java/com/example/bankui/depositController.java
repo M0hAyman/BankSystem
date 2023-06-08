@@ -27,16 +27,16 @@ public class depositController {
         try {
             int i = Integer.parseInt(amount_input);
             if(LoginController.curracc.deposit(i)==-1){
-                confirmdepositlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+                confirmdepositlbl.setText("Invalid input. Please enter a valid POSITIVE amount.");
 
             } else {
-                LoginController.curracc.deposit(i);
+                //LoginController.curracc.deposit(i);
                 confirmdepositlbl.setText(LoginController.curruser.getName()+" Your New Balance is: " + LoginController.curracc.getBalance());
 
             }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
-            confirmdepositlbl.setText("Invalid input. Please enter a valid integer amount.");
+            confirmdepositlbl.setText("Invalid input. Please enter a valid amount.");
         }
     }
     public void backInDepbtnfn(ActionEvent event) throws IOException {

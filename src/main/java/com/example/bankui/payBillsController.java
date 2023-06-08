@@ -33,15 +33,15 @@ public class payBillsController {
 
             if(LoginController.curruser.pay_bills(i) == -1)
             {
-                confirmlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+                confirmlbl.setText("Invalid input. Please enter a valid POSITIVE amount.");
             }
             else {
-                LoginController.curruser.pay_bills(i);
+                //LoginController.curruser.pay_bills(i);
                 confirmlbl.setText(LoginController.curruser.getName() + " Your New Balance is: " + LoginController.curracc.getBalance());
             }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
-            confirmlbl.setText("Invalid input. Please enter a valid integer amount.");
+            confirmlbl.setText("Invalid input. Please enter a valid amount.");
         }
     }
 

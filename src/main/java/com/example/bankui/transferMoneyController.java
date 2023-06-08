@@ -34,9 +34,9 @@ public class transferMoneyController {
                 if (usr.getName().equals(username_input)){
                     if(!LoginController.curruser.getName().equals(username_input)) {
                         if(LoginController.curruser.Transfere_money_to(usr, i)== -1){
-                            confirmlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+                            confirmlbl.setText("Invalid input. Please enter a valid POSITIVE amount.");
                         }else{
-                            LoginController.curruser.Transfere_money_to(usr, i);
+                            //LoginController.curruser.Transfere_money_to(usr, i);
                             confirmlbl.setText(LoginController.curruser.getName() + " Your New Balance is: " + LoginController.curracc.getBalance() + " and you transfered: " + amount_input + " to: " + username_input);
                         }
                         //System.out.println("Amount Transferred, Your Balance is: " + LoginController.curracc.getBalance());
@@ -49,7 +49,7 @@ public class transferMoneyController {
             }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
-            confirmlbl.setText("Invalid input. Please enter a valid integer amount.");
+            confirmlbl.setText("Invalid input. Please enter a valid amount.");
         }
     }
 

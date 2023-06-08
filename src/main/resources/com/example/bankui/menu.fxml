@@ -25,7 +25,7 @@
             <Button fx:id="transfermoneybtn" layoutX="394.0" layoutY="180.0" mnemonicParsing="false" onAction="#transfermoneybtnfn" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #FFC900;" text="Transfer Money" />
             <Button fx:id="checkbalancebtn" layoutX="394.0" layoutY="257.0" mnemonicParsing="false" onAction="#checkbalancebtnfn" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #FFC900;" text="Check Balance" />
             <Button fx:id="withdrawbtn" layoutX="255.0" layoutY="259.0" mnemonicParsing="false" onAction="#withdrawbtnfn" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #FFC900;" text="Withdraw" />
-            <Button fx:id="depositebtn" layoutX="112.0" layoutY="259.0" mnemonicParsing="false" onAction="#depositebtnfn" prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: #FFC900;" text="Deposite" />
+            <Button fx:id="depositebtn" layoutX="112.0" layoutY="259.0" mnemonicParsing="false" onAction="#depositebtnfn" prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: #FFC900;" text="Deposit" />
         <Label fx:id="nameLabel" layoutX="39.0" layoutY="24.0" prefHeight="18.0" prefWidth="354.0" text="Welcome...." textFill="#e38d05">
            <font>
               <Font name="Arial Bold" size="30.0" />
