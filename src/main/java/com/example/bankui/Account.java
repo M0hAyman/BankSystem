@@ -14,13 +14,21 @@ public class Account {
 
     public double deposit(double amount)
     {
-        Balance+=amount;
-        return Balance;
+        if (amount<0){
+            return -1;
+        }else {
+            Balance += amount;
+            return Balance;
+        }
     }
     public double withdraw(double amount)
     {
-        Balance-=amount;
-        return Balance;
+        if (amount<0){
+            return -1;
+        }else {
+            Balance -= amount;
+            return Balance;
+        }
     }
 
 

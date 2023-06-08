@@ -26,12 +26,12 @@ public class AccountTest2 {
 
     @Test
     public void withdraw(){
-        assertEquals(-200.0,my_software.withdraw(100),0);
+        assertEquals(-1,my_software.withdraw(-100),0);
     }
 
     @Test
     public void deposit(){
-        assertEquals(1000,my_software.deposit(100.0),0);
+        assertEquals(-1,my_software.deposit(-100.0),0);
     }
     @After
     public void endTest(){

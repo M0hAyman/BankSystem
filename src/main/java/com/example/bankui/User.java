@@ -25,20 +25,29 @@ public class User {
     }
     public double pay_bills(double amount)
     {
-        return account.withdraw(amount);
-
+        if (amount<0){
+            return -1;
+        }else {
+            return account.withdraw(amount);
+        }
     }
 
     public double buy_item (double amount)
-    {
+    { if (amount<0){
+        return -1;
+    }else {
         return account.withdraw(amount);
+    }
     }
 
     public double Transfere_money_to(User user,double amount)
     {
-
-        user.Transfere_money_from(amount);
-        return account.withdraw(amount);
+        if (amount<0){
+            return -1;
+        }else {
+            user.Transfere_money_from(amount);
+            return account.withdraw(amount);
+        }
     }
     public double Transfere_money_from(double amount)
     {

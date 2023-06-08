@@ -23,19 +23,21 @@ public class UserTest2 {
     }
     @Test
     public void paybills(){
-        assertEquals(-200.0,my_software.pay_bills(100.0),0);
+        assertEquals(-1,my_software.pay_bills(-100.0),0);
+
     }
+
     @Test
     public void buyitem(){
-        assertEquals(100.0,my_software.buy_item(100.0),0);
+        assertEquals(-1,my_software.buy_item(-100.0),0);
     }
     @Test
     public void Transferemoneyto(){
-        assertEquals(-1000.0,my_software.Transfere_money_to(my_softwareUser2,100),0);
+        assertEquals(-1,my_software.Transfere_money_to(my_softwareUser2,-100.0),0);
     }
     @Test
     public void Transferemoneyfrom(){
-        assertEquals(2000,my_softwareUser2.Transfere_money_from(100),0);
+        assertEquals(-1,my_softwareUser2.Transfere_money_from(-100.0),0);
     }
     @After
     public void endTest(){
