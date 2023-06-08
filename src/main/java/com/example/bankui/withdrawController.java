@@ -1,5 +1,6 @@
 package com.example.bankui;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -7,7 +8,10 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
-public class withdrawController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class withdrawController implements Initializable {
     @FXML
     private Button confirmwithdrawbtn;
     @FXML
@@ -23,7 +27,15 @@ public class withdrawController {
     @FXML
     private TextField withdrawamounttxt;
 
-    public void confirmWithdrawAmountbtnfn(ActionEvent event) throws IOException {
+    @Override
+    public void initialize(URL location, ResourceBundle arg1)
+    {
+        currentbalancelbl.setText("Your current Balance is: "+LoginController.account1.getBalance());
+        //nameLabel.setText("$ "+LoginController.account1.getBalance());
+
+        //static_label=nameLabel;
+    }
+    public void confirmWithdrawAmountbtnfn(ActionEvent event)  {
         //currentbalancelbl.setText();
         String amount_input =withdrawamounttxt.getText();
         try {
@@ -35,7 +47,7 @@ public class withdrawController {
             confirmwithdrawlbl.setText("Invalid input. Please enter a valid integer amount.");
         }
     }
-    public void checkmyBalancebtnfn(ActionEvent event) throws IOException {
+    public void checkmyBalancebtnfn(ActionEvent event) {
         currentbalancelbl.setText("Your current Balance is: "+LoginController.account1.getBalance());
 
     }

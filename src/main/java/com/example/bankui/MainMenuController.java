@@ -1,5 +1,6 @@
 package com.example.bankui;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -7,7 +8,10 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
-public class MainMenuController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainMenuController implements Initializable {
 
     @FXML
     private Button logout;
@@ -24,9 +28,27 @@ public class MainMenuController {
     private Button withdrawbtn;
     @FXML
     private Button transfermoneybtn;
+    @FXML
+    private Button checkbalancebtn;
+    @FXML
+    private Label nameLabel;
 
+    //public static Label static_label;
+
+    @Override
+    public void initialize(URL location, ResourceBundle arg1)
+    {
+        nameLabel.setText("Hello Mr. " + LoginController.name +" !");
+        //nameLabel.setText("$ "+LoginController.account1.getBalance());
+
+        //static_label=nameLabel;
+    }
     Main m = new Main();
-
+//    public void displayName(String username) {
+//        static_label=nameLabel;
+//        static_label.setText("Hello: " + username);
+//        nameLabel.setText("Hello: " + username);
+//    }
     public void userLogOut(ActionEvent event) throws IOException {
         m.changeScene("LoginView.fxml");
     }
@@ -46,5 +68,8 @@ public class MainMenuController {
 
     public void transfermoneybtnfn(ActionEvent event) throws IOException {
         m.changeScene("transfer-money-view.fxml");
+    }
+    public void checkbalancebtnfn(ActionEvent event) throws IOException {
+        m.changeScene("check-balance-view.fxml");
     }
 }

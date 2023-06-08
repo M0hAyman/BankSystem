@@ -7,26 +7,36 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #171717;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bankui.MainMenuController">
-    <center>
+   <top>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button fx:id="logout" layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#userLogOut" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #FFC900;" text="Log Out">
-                    <font>
-                        <Font name="System Bold" size="12.0" />
-                    </font>
-                </Button>
-                <Label layoutX="142.0" layoutY="101.0" text="What would you like to do?" textFill="#e38d05">
-                    <font>
-                        <Font size="26.0" />
-                    </font>
-                </Label>
-                <Button fx:id="paybillbtn" layoutX="114.0" layoutY="180.0" mnemonicParsing="false" onAction="#paybillsbtnfn" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #FFC900;" text="Pay Bills" />
-                <Button fx:id="buyItembtn" layoutX="255.0" layoutY="180.0" mnemonicParsing="false" onAction="#buyItembtnfn" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #FFC900;" text="Buy Items" />
-                <Button fx:id="transfermoneybtn" layoutX="394.0" layoutY="180.0" mnemonicParsing="false" onAction="#transfermoneybtnfn" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #FFC900;" text="Transfer Money" />
-                <Button layoutX="394.0" layoutY="257.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #FFC900;" text="Check Balance" />
-                <Button fx:id="withdrawbtn" layoutX="255.0" layoutY="259.0" mnemonicParsing="false" onAction="#withdrawbtnfn" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #FFC900;" text="Withdraw" />
-                <Button fx:id="depositebtn" layoutX="112.0" layoutY="259.0" mnemonicParsing="false" onAction="#depositebtnfn" prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: #FFC900;" text="Deposite" />
-            </children>
+
+            <Button fx:id="logout" layoutX="500.0" layoutY="14.0" mnemonicParsing="false" onAction="#userLogOut" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #FFC900;" text="Log Out">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+            </Button>
+            <Label layoutX="142.0" layoutY="101.0" text="What would you like to do?" textFill="#e38d05">
+                <font>
+                    <Font size="26.0" />
+                </font>
+            </Label>
+            <Button fx:id="paybillbtn" layoutX="114.0" layoutY="180.0" mnemonicParsing="false" onAction="#paybillsbtnfn" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #FFC900;" text="Pay Bills" />
+            <Button fx:id="buyItembtn" layoutX="255.0" layoutY="180.0" mnemonicParsing="false" onAction="#buyItembtnfn" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #FFC900;" text="Buy Items" />
+            <Button fx:id="transfermoneybtn" layoutX="394.0" layoutY="180.0" mnemonicParsing="false" onAction="#transfermoneybtnfn" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #FFC900;" text="Transfer Money" />
+            <Button fx:id="checkbalancebtn" layoutX="394.0" layoutY="257.0" mnemonicParsing="false" onAction="#checkbalancebtnfn" prefHeight="39.0" prefWidth="102.0" style="-fx-background-color: #FFC900;" text="Check Balance" />
+            <Button fx:id="withdrawbtn" layoutX="255.0" layoutY="259.0" mnemonicParsing="false" onAction="#withdrawbtnfn" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #FFC900;" text="Withdraw" />
+            <Button fx:id="depositebtn" layoutX="112.0" layoutY="259.0" mnemonicParsing="false" onAction="#depositebtnfn" prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: #FFC900;" text="Deposite" />
+        <Label fx:id="nameLabel" layoutX="39.0" layoutY="24.0" prefHeight="18.0" prefWidth="354.0" text="Welcome...." textFill="#e38d05">
+           <font>
+              <Font name="Arial Bold" size="30.0" />
+           </font>
+        </Label>
+        <Label layoutX="39.0" layoutY="60.0" prefHeight="18.0" prefWidth="354.0" text="Welcome...." textFill="#e38d05">
+           <font>
+              <Font name="Arial Bold" size="30.0" />
+           </font>
+        </Label>
+
         </AnchorPane>
-    </center>
+   </top>
 </BorderPane>
