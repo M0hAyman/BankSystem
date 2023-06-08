@@ -25,12 +25,20 @@ public class payBillsController {
     @FXML
     private TextField amounttxt;
 
-    public void confirmAmountbtnfn(ActionEvent event) throws IOException {
+    public void confirmAmountbtnfn(ActionEvent event) {
+        confirmlbl.setWrapText(true);
         String amount_input =amounttxt.getText();
         try {
             int i = Integer.parseInt(amount_input);
-            LoginController.user1.pay_bills(i);
-            confirmlbl.setText(LoginController.user1.getName()+" Your New Balance is: " + LoginController.account1.getBalance());
+
+            if(LoginController.curruser.pay_bills(i) == -1)
+            {
+                confirmlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+            }
+            else {
+                LoginController.curruser.pay_bills(i);
+                confirmlbl.setText(LoginController.curruser.getName() + " Your New Balance is: " + LoginController.curracc.getBalance());
+            }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
             confirmlbl.setText("Invalid input. Please enter a valid integer amount.");

@@ -21,12 +21,19 @@ public class depositController {
     @FXML
     private TextField depamounttxt;
 
-    public void confirmDepAmountbtnfn(ActionEvent event) throws IOException {
+    public void confirmDepAmountbtnfn(ActionEvent event) {
+        confirmdepositlbl.setWrapText(true);
         String amount_input =depamounttxt.getText();
         try {
             int i = Integer.parseInt(amount_input);
-            LoginController.account1.deposit(i);
-            confirmdepositlbl.setText(LoginController.user1.getName()+" Your New Balance is: " + LoginController.account1.getBalance());
+            if(LoginController.curracc.deposit(i)==-1){
+                confirmdepositlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+
+            } else {
+                LoginController.curracc.deposit(i);
+                confirmdepositlbl.setText(LoginController.curruser.getName()+" Your New Balance is: " + LoginController.curracc.getBalance());
+
+            }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
             confirmdepositlbl.setText("Invalid input. Please enter a valid integer amount.");

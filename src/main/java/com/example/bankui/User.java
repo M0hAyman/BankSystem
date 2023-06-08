@@ -1,28 +1,13 @@
 package com.example.bankui;
 
 public class User {
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
     private String Name;
-    private String Gender;
+    private final String Gender;
     private Account account;
-    private String Details;
-
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
+    private final String Details;
     private String Password;
+
+
     public User(){
         this.Name="";
         this.account=new Account();
@@ -58,6 +43,30 @@ public class User {
     public double Transfere_money_from(double amount)
     {
         return account.deposit(amount);
+    }
+
+    //Getters and Setters
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
 

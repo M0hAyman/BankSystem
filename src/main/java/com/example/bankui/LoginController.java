@@ -29,6 +29,8 @@ public class LoginController{
     static User user1=new User("mohamed","male",account1,"ssssss","1234");
 
     static User user2=new User("som3a","male",account2,"yyyyyy","5678");
+    static User curruser;
+    static Account curracc;
 
     static ArrayList<User> users= new ArrayList<>() {
         {
@@ -49,16 +51,12 @@ public class LoginController{
 
     @FXML
     private PasswordField password;
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     public void userLogin(ActionEvent event) throws IOException {
 
         checkLogin();
 
     }
-    public static String name;
+    public static String currname;
     static Main m = new Main();
 
     private void checkLogin() throws IOException {
@@ -71,19 +69,39 @@ public class LoginController{
 //
 //            }
 //        }
+        if(username.getText().isEmpty() && password.getText().isEmpty())
+        {
+            wrongLogin.setText("Please enter your data.");
+        }else {
+            String username_input =username.getText();
+            for (User usr :users){
+                if (usr.getName().equals(username_input) && password.getText().equals(usr.getPassword())){
+                    wrongLogin.setText("Success!");
+                    currname= usr.getName();
+                    curruser =usr;
+                    curracc =usr.getAccount();
+                    m.changeScene("menu.fxml");
+
+
+                }else {
+                    wrongLogin.setText("Wrong username or password");
+                }
+            }
+        }
+
+        /*
         if (username.getText().equals(user1.getName()) && password.getText().equals(user1.getPassword()))
         {
             wrongLogin.setText("Success!");
-            //MainMenuController mController =new MainMenuController();
-            //mController.displayName(username.getText());
-            //static_label.setText("Hello: " + username.getText());
-            name=username.getText();
+            currname=username.getText();
             m.changeScene("menu.fxml");
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             wrongLogin.setText("Please enter your data.");
         }else {
             wrongLogin.setText("Wrong username or password");
         }
+
+        */
     }
 
     public void initialize() {

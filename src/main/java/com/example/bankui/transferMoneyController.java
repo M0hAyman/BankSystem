@@ -23,7 +23,7 @@ public class transferMoneyController {
     @FXML
     private TextField transfer_price_txt;
 
-    public void transferbtnfn(ActionEvent event) throws IOException {
+    public void transferbtnfn(ActionEvent event) {
         confirmlbl.setWrapText(true);
         String amount_input =transfer_price_txt.getText();
         String username_input =user_name_txt.getText();
@@ -32,8 +32,16 @@ public class transferMoneyController {
             int i = Integer.parseInt(amount_input);
             for (User usr :LoginController.users){
                 if (usr.getName().equals(username_input)){
-                    LoginController.user1.Transfere_money_to(usr,i);
-                    confirmlbl.setText(LoginController.user1.getName()+" Your New Balance is: " + LoginController.account1.getBalance()+"and you transfered: "+amount_input+" to: "+username_input);
+                    if(!LoginController.curruser.getName().equals(username_input)) {
+                        if(LoginController.curruser.Transfere_money_to(usr, i)== -1){
+                            confirmlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+                        }else{
+                            LoginController.curruser.Transfere_money_to(usr, i);
+                            confirmlbl.setText(LoginController.curruser.getName() + " Your New Balance is: " + LoginController.curracc.getBalance() + " and you transfered: " + amount_input + " to: " + username_input);
+                        }
+                        //System.out.println("Amount Transferred, Your Balance is: " + LoginController.curracc.getBalance());
+                    }else confirmlbl.setText("Hey! You can not transfer money to yourself!!");
+                    break;
                 }else {
                     confirmlbl.setText("User not found!");
 

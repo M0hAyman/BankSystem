@@ -38,7 +38,7 @@ public class MainMenuController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle arg1)
     {
-        nameLabel.setText("Hello Mr. " + LoginController.name +" !");
+        nameLabel.setText("Hello Mr. " + LoginController.currname +" !");
         //nameLabel.setText("$ "+LoginController.account1.getBalance());
 
         //static_label=nameLabel;

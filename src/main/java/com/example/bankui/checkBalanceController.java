@@ -19,7 +19,7 @@ public class checkBalanceController {
     private Label currentbalancelbl;
 
     public void checkmyBalancebtnfn(ActionEvent event) {
-        currentbalancelbl.setText("Your current Balance is: "+LoginController.account1.getBalance());
+        currentbalancelbl.setText("Your current Balance is: "+LoginController.curracc.getBalance());
 
     }
 

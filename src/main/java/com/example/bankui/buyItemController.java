@@ -25,13 +25,18 @@ public class buyItemController {
     private TextField item_price_txt;
 
 
-    public void confirmItembtnfn(ActionEvent event) throws IOException {
+    public void confirmItembtnfn(ActionEvent event) {
         confirmlbl.setWrapText(true);
         String amount_input =item_price_txt.getText();
         try {
             int i = Integer.parseInt(amount_input);
-            LoginController.user1.buy_item(i);
-            confirmlbl.setText(LoginController.user1.getName()+" Your New Balance is: " + LoginController.account1.getBalance()+"and you bought "+item_name_txt.getText());
+            if(LoginController.curruser.buy_item(i)== -1){
+                confirmlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+            }else{
+                LoginController.curruser.buy_item(i);
+                confirmlbl.setText(LoginController.curruser.getName()+" Your New Balance is: " + LoginController.curracc.getBalance()+"and you bought "+item_name_txt.getText());
+
+            }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
             confirmlbl.setText("Invalid input. Please enter a valid integer amount.");

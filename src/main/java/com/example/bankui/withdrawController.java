@@ -37,11 +37,19 @@ public class withdrawController implements Initializable {
     }
     public void confirmWithdrawAmountbtnfn(ActionEvent event)  {
         //currentbalancelbl.setText();
+        confirmwithdrawlbl.setWrapText(true);
+
         String amount_input =withdrawamounttxt.getText();
         try {
             int i = Integer.parseInt(amount_input);
-            LoginController.account1.withdraw(i);
-            confirmwithdrawlbl.setText(LoginController.user1.getName()+" Your New Balance is: " + LoginController.account1.getBalance());
+            if(LoginController.curracc.withdraw(i) == -1){
+                confirmwithdrawlbl.setText("Invalid input. Please enter a valid POSITIVE integer amount.");
+
+            } else {
+                LoginController.curracc.withdraw(i);
+                confirmwithdrawlbl.setText(LoginController.curruser.getName()+" Your New Balance is: " + LoginController.curracc.getBalance());
+
+            }
         } catch (NumberFormatException e) {
             // Display an error message to the user if the input is invalid
             confirmwithdrawlbl.setText("Invalid input. Please enter a valid integer amount.");
