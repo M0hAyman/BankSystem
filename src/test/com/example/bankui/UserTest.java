@@ -24,20 +24,20 @@ public class UserTest {
     }
 
     @Test
-    public void paybills(){
+    public void paybillsTest(){
         assertEquals(-300.0,my_software.pay_bills(100.0),0);
     }
 
     @Test
-    public void buyitem(){
+    public void buyitemTest(){
         assertEquals(-200.0,my_software.buy_item(100.0),0);
     }
     @Test
-    public void Transferemoneyto(){
+    public void TransferemoneytoTest(){
         assertEquals(-100.0,my_software.Transfere_money_to(my_softwareUser2,100),0);
     }
     @Test
-    public void Transferemoneyfrom(){
+    public void TransferemoneyfromTest(){
         assertEquals(200,my_softwareUser2.Transfere_money_from(100),0);
     }
     @After

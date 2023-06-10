@@ -24,6 +24,7 @@ public class transferMoneyController {
     private TextField transfer_price_txt;
 
     public void transferbtnfn(ActionEvent event) {
+        long nano_startTime = System.nanoTime();
         confirmlbl.setWrapText(true);
         String amount_input =transfer_price_txt.getText();
         String username_input =user_name_txt.getText();
@@ -51,9 +52,14 @@ public class transferMoneyController {
             // Display an error message to the user if the input is invalid
             confirmlbl.setText("Invalid input. Please enter a valid amount.");
         }
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the TransferMoney function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
 
     public void backInTransferbtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         LoginController.m.changeScene("menu.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the back in TransferMoney function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
 }

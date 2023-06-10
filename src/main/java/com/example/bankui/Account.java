@@ -8,9 +8,7 @@ public class Account {
         this.Balance = 0;
     }
 
-    public double getBalance() {
-        return Balance;
-    }
+
 
     public double deposit(double amount)
     {
@@ -31,6 +29,9 @@ public class Account {
         }
     }
 
+    public double getBalance() {
+        return Balance;
+    }
 
 
 }

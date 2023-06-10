@@ -19,11 +19,17 @@ public class checkBalanceController {
     private Label currentbalancelbl;
 
     public void checkmyBalancebtnfn(ActionEvent event) {
+        long nano_startTime = System.nanoTime();
         currentbalancelbl.setText("Your current Balance is: "+LoginController.curracc.getBalance());
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the checkBalance function-- in nano seconds: "+(nano_endTime - nano_startTime));
 
     }
 
     public void backInCheckBalancebtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         LoginController.m.changeScene("menu.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the back in CheckBalance function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
 }

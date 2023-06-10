@@ -39,7 +39,7 @@ public class LoginController{
         }
     };
 
-    static ArrayList<Item> items= new ArrayList<>();
+    //static ArrayList<Item> items= new ArrayList<>();
     @FXML
     private Button loginbtn;
 
@@ -52,8 +52,10 @@ public class LoginController{
     @FXML
     private PasswordField password;
     public void userLogin(ActionEvent event) throws IOException {
-
+        long nano_startTime = System.nanoTime();
         checkLogin();
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the login function-- in nano seconds: "+(nano_endTime - nano_startTime));
 
     }
     public static String currname;

@@ -35,6 +35,20 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        long nano_startTime = System.nanoTime();
+        long millis_startTime = System.currentTimeMillis();
+
         launch();
+
+        long nano_endTime = System.nanoTime();
+        long millis_endTime = System.currentTimeMillis();
+
+        // Print the time taken by subtracting
+        // the end-time from the start-time
+        System.out.println("Time taken --for the whole program-- in nano seconds: "+(nano_endTime - nano_startTime));
+        System.out.println("Time taken --for the whole program-- in milli seconds: "+ (millis_endTime - millis_startTime));
+        System.out.println("Time taken --for the whole program-- in seconds (approximated): "+ (millis_endTime - millis_startTime)/1000);
     }
+
+
 }

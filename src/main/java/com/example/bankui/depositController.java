@@ -22,6 +22,7 @@ public class depositController {
     private TextField depamounttxt;
 
     public void confirmDepAmountbtnfn(ActionEvent event) {
+        long nano_startTime = System.nanoTime();
         confirmdepositlbl.setWrapText(true);
         String amount_input =depamounttxt.getText();
         try {
@@ -38,8 +39,13 @@ public class depositController {
             // Display an error message to the user if the input is invalid
             confirmdepositlbl.setText("Invalid input. Please enter a valid amount.");
         }
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the deposit function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
     public void backInDepbtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         LoginController.m.changeScene("menu.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the back in deposit function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
 }

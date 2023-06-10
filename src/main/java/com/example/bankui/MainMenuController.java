@@ -50,26 +50,47 @@ public class MainMenuController implements Initializable {
 //        nameLabel.setText("Hello: " + username);
 //    }
     public void userLogOut(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         m.changeScene("LoginView.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the logout function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
     public void paybillsbtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         m.changeScene("pay-bills-view.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the payBills switch function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
     public void depositebtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         m.changeScene("deposit-view.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the deposit switch function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
     public void buyItembtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         m.changeScene("buy-items-view.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the buyItem switch function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
 
     public void withdrawbtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         m.changeScene("withdraw-view.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the withdraw switch function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
 
     public void transfermoneybtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         m.changeScene("transfer-money-view.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the transferMoney switch function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
     public void checkbalancebtnfn(ActionEvent event) throws IOException {
+        long nano_startTime = System.nanoTime();
         m.changeScene("check-balance-view.fxml");
+        long nano_endTime = System.nanoTime();
+        System.out.println("Time taken --for the checkBalance function-- in nano seconds: "+(nano_endTime - nano_startTime));
     }
 }
